@@ -1,0 +1,105 @@
+header {
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+footer {
+	margin-bottom: 20px;
+}
+
+.web {
+	display: table;
+	width: 100%;
+	text-align: center;
+	table-layout: fixed;
+}
+
+.web .table-row {
+	display: table-row;
+}
+
+.web .table-cell {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 20px;
+}
+
+.web .logo {
+	text-align: left;
+}
+
+.web .login {
+	text-align: right;
+	font-size: 13px;
+}
+
+.category {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+header a {
+	color: black;	
+}
+
+header a:hover {
+	text-decoration: none;
+	color: gray;
+}
+
+footer {
+}
+
+hr {
+	border: solid 0.5px gray;
+}
+
+.app {
+	display: none;
+}
+
+@media ( max-width: 991px ) {
+	.web {
+		display: none;
+	}
+	
+	.app {
+		display: inline-block;
+		width: 100%;
+	}
+	
+	.app .menuBtn {
+		text-align: right;
+	}
+	
+	.app img {
+		height: 60px;
+	}
+	
+	.app .navigation-list {
+		 text-align: center;
+	}
+	
+	ul {
+		list-style: none;
+	}
+	
+	li {
+		margin-top: 15px;	
+		margin-bottom: 15px;
+		font-size: 18px;
+	}
+	
+	hr {
+		border: solid 2px black;
+	}
+	
+	input {
+		font-size: 25px;
+		border: solid 2px black;
+	}
+}
+
+@media ( max-width: 767px ) {
+
+}
