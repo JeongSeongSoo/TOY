@@ -1,0 +1,64 @@
+.jobBox {
+	text-align: center; 
+	width: 98%; 
+	margin: 0 auto;	
+}
+
+.jobBox .header span {
+	font-size: 30px;
+}
+
+.jobBox .find {
+	margin-top: 30px;
+	margin-bottom: 60px;
+	font-size: 15px;
+	text-align: left;
+}
+
+.jobBox .category {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.jobBox .header .step {
+	color: #ff5151;
+}
+
+table {
+	margin-top: 10px;	
+}
+
+table tr {
+	margin-top: 30px;
+}
+
+table tr:hover {
+	cursor: pointer;
+	background-color: #e8e8e8;
+}
+
+ul {
+	list-style:none;
+}
+
+.title {
+	font-size: 22px;
+}
+
+.date {
+	font-size: 18px;
+}
+
+.tag {
+	font-size: 16px;
+}
+
+@media ( max-width: 991px ) {
+	.jobHeader {
+		margin-left: 10px;
+	}
+}
+
+@media ( max-width: 767px ) {
+
+}
