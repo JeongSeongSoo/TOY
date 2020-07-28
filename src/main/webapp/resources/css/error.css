@@ -1,0 +1,64 @@
+.webDiv {
+	display: block;
+}
+
+.moDiv {
+	display: none;
+}
+
+.errorBox {
+	text-align: center; 
+	width:50%; 
+	margin:0 auto;	
+}
+
+.errorBox .header span {
+	font-size: 30px;
+}
+
+.errorBox .category {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.errorBox .header .step {
+	color: #ff5151;
+}
+
+.errorBox li {
+	text-align: left;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+@media ( max-width: 991px ) {
+	.errorHeader {
+		margin-left: 10px;
+	}
+	
+	.errorBox .header span {
+		font-size: 30px;
+	}
+
+	.webDiv {
+		display: none;
+	}
+	
+	.moDiv {
+		display: block;
+		text-align: left;
+		font-size: 16px;
+	}
+}
+
+@media ( max-width: 767px ) {
+	.errorBox .header span {
+		font-size: 24px;
+	}
+	
+	.moDiv {
+		display: block;
+		text-align: left;
+		font-size: 12px;
+	}
+}

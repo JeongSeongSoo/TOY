@@ -28,6 +28,11 @@
 					<span class="category">│</span>
 					<a href="/login/join">회원가입</a>
 				</sec:authorize>
+				<sec:authorize access="isAuthenticated()">
+					<sec:authentication property="principal.userNm" />님
+					<span class="category">│</span>
+					<a href="/login/logout">로그아웃</a>
+			</sec:authorize>
 			</div>
 		</div>
 		<!-- 

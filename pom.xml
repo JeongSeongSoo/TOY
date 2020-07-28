@@ -209,6 +209,13 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<version>2.3.0</version>
 		</dependency>
+		
+		<!-- MySQL -->
+		<dependency> 
+			<groupId>mysql</groupId> 
+			<artifactId>mysql-connector-java</artifactId> 
+			<version>8.0.11</version> 
+		</dependency>
 				
 		<!-- mybatis -->
 		<dependency>

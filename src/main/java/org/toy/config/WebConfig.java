@@ -1,5 +1,7 @@
 package org.toy.config;
 
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -35,5 +37,16 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		 */
 		return new String[] { "/" };
 	}
+	
+	@Override
+    protected DispatcherServlet createDispatcherServlet(WebApplicationContext servletAppContext) {
+		/*
+		 * Error Setting
+		 */
+        DispatcherServlet dispatcherServlet = (DispatcherServlet) super.createDispatcherServlet(servletAppContext);
+        dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
+        
+        return dispatcherServlet;
+    }
 	
 }
