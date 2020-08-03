@@ -11,22 +11,22 @@
 	<div class="web">
 		<div class="table-row">
 			<div class="table-cell logo">
-				<a href="/page/daily"><img src="/resources/img/dog.png" style="height: 50px;"></img></a>
+				<a href="#"><img src="/resources/img/dog.png" style="height: 50px;"></img></a>
 			</div>
 			<div class="table-cell">
-				<a href="/page/daily">크루</a>
+				<a href="#">크루</a>
 			</div>
 			<div class="table-cell">
-				<a href="/page/chance">지원하기</a>
+				<a href="/job/jobs">지원하기</a>
 			</div>
 			<div class="table-cell">
-				<a href="#">나의 이력서</a>
+				<a href="/resume/review">나의 지원서</a>
 			</div>
 			<div class="table-cell login">
 				<sec:authorize access="isAnonymous()">
 					<a href="/login/login">로그인</a>
 					<span class="category">│</span>
-					<a href="/login/join">회원가입</a>
+					<a href="${joinPath}">회원가입</a>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
 					<sec:authentication property="principal.userNm" />님
@@ -35,27 +35,6 @@
 			</sec:authorize>
 			</div>
 		</div>
-		<!-- 
-		<div class="menuForm" style="text-align: center;">
-			<a href="/page/daily"><img src="/resources/img/dog.png" style="height: 50px;"></img></a>
-			<sec:authorize access="isAnonymous()">
-				<a href="/page/daily">크루</a>
-			    <a href="/page/chance">지원하기</a>
-			    <a href="#">나의 이력서</a>
-		    </sec:authorize>
-			<sec:authorize access="isAnonymous()">
-				<a href="/login/login">로그인</a>
-				<span class="category">│</span>
-				<a href="/login/join">회원가입</a>
-			</sec:authorize>
-			<sec:authorize access="isAuthenticated()">
-				<sec:authentication property="principal.userNm" />님
-				<span class="category">│</span>
-				<a href="/login/logout">로그아웃</a>
-			</sec:authorize>
-		</div>
-		 -->
-		 
 	</div>
 	<div class="row app">
 		<div class="row">

@@ -1,0 +1,53 @@
+.reviewBox {
+	text-align: center; 
+	width: 98%; 
+	margin: 0 auto;	
+}
+
+.reviewBox .header span {
+	font-size: 30px;
+}
+
+.reviewBox .find {
+	margin-top: 30px;
+	margin-bottom: 60px;
+	font-size: 15px;
+	text-align: left;
+}
+
+.reviewBox .category {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.reviewBox .header .step {
+	color: #ff5151;
+}
+
+input {
+	width: 80%;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.modifyBtn {
+	width: 180px;
+	height: 60px;
+	background-color: #ff8040;
+	color: white;
+	border-width: 0;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+@media ( max-width: 991px ) {
+	.reviewHeader {
+		margin-left: 10px;
+	}
+}
+
+@media ( max-width: 767px ) {
+
+}

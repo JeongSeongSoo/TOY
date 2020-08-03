@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.toy.web.job.mapper.JobMapper">
+
+	<select id="loadJob" resultType="org.toy.web.job.model.JobVO">
+		SELECT TITLE,
+			   CLOSE_DT,
+			   LOCATION,
+			   COMPANY,
+			   EMPLOY_STATUS,
+			   CREATOR,
+			   CREATE_DT
+		  FROM TBL_JOB
+	</select>
+
+	<insert id="addJob">
+		INSERT INTO TBL_JOB
+		VALUES 
+		(#{jid}, #{title}, #{closeDt}, #{location}, #{company}, #{employStatus}, #{creator}, DATE_FORMAT(NOW(),'%Y%m%d%H%i%S'))
+	</insert>
+	
+	<insert id="addJobDetail">
+		INSERT INTO TBL_JOB_DETAIL
+		VALUES 
+		(#{jid}, #{volunteer}, #{groupContent}, #{businessContent}, #{supportContent}, #{mustContent}, #{workContent})
+	</insert>
+	
+</mapper>
+

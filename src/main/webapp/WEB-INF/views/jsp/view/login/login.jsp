@@ -40,7 +40,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 find">
 				<ul>
-					<li>처음 지원하시는 분들은 지원자 등록을 먼저 해주세요. <a href="#">신규지원자 등록</a></li>
+					<li>처음 지원하시는 분들은 지원자 등록을 먼저 해주세요. <a href="${joinPath}">신규지원자 등록</a></li>
 					<li>비밀번호를 잊어버렸나요? <a href="#">비밀번호 찾기</a></li>
 				</ul>
 			</div>

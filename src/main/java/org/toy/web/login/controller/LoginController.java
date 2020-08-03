@@ -3,11 +3,13 @@ package org.toy.web.login.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.toy.common.Constants;
 import org.toy.web.user.model.UserVO;
 import org.toy.web.user.service.UserService;
 
@@ -19,7 +21,8 @@ public class LoginController {
 	private UserService userService;
 	
 	@GetMapping("/login")
-	public String login() {
+	public String login(Model model) {
+		model.addAttribute("joinPath", Constants.JOIN_PATH);
 		return "login.login";
 	}
 	

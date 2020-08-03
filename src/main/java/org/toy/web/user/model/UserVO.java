@@ -16,6 +16,7 @@ public class UserVO implements UserDetails {
 	private String userPw;
 	private String userNm;
 	private String email;
+	private String role;
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

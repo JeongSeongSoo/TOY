@@ -98,6 +98,14 @@ hr {
 		font-size: 25px;
 		border: solid 2px black;
 	}
+	
+	select {
+		border: solid 2px black;
+	}
+	
+	textarea {
+		border: solid 2px black;
+	}
 }
 
 @media ( max-width: 767px ) {

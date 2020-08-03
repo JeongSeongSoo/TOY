@@ -12,6 +12,12 @@
 		 WHERE USER_ID = #{userId}  
 	</select>
 	
+	<select id="loadAuthorities" resultType="String"> 
+		SELECT ROLE
+		  FROM TBL_AUTHORITIES	  
+		 WHERE uid = #{uid}  
+	</select>
+	
 	<select id="loadUserByEmail" resultType="org.toy.web.user.model.UserVO"> 
 		SELECT USER_ID,
 			   USER_PW,
@@ -25,6 +31,12 @@
 		INSERT INTO TBL_USER
 		VALUES 
 		(#{uid}, #{userId}, #{userPw}, #{userNm}, #{email})
+	</insert>
+	
+	<insert id="addAuthorities">
+		INSERT INTO TBL_AUTHORITIES
+		VALUES 
+		(#{uid}, #{role})
 	</insert>
 	
 </mapper>

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/resources/css/job.css" />
+<link rel="stylesheet" href="/resources/css/job/job.css" />
+<script src="/resources/js/job/job.js"></script>
 </head>
 <body>
 <div class="container">
@@ -19,44 +21,16 @@
 		<hr/>
 		<div class="row">	
 	 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<table style="width: 100%">
-					<tr>
-						<td width="60%" style="text-align: left;">
-							<ul>
-								<li class="title">[월간 블루칩 7월] 사용자 서비스 서버 개발자 모집</li>
-								<li class="date">2020년 7월 31일 까지 | 판교</li>
-								<li class="tag">#Server</li>
-							</ul>
-						</td>
-						<td class="date" width="20%">블루칩</td>
-						<td class="date" width="20%">정규직</td>
-					</tr>
-					<tr>
-						<td width="60%" style="text-align: left;">
-							<ul>
-								<li class="title">[월간 블루칩 7월] 사용자 서비스 서버 개발자 모집</li>
-								<li class="date">2020년 7월 31일 까지 | 판교</li>
-								<li class="tag">#Server</li>
-							</ul>
-						</td>
-						<td class="date" width="20%">블루칩</td>
-						<td class="date" width="20%">정규직</td>
-					</tr>
-					<tr>
-						<td width="60%" style="text-align: left;">
-							<ul>
-								<li class="title">[월간 블루칩 7월] 사용자 서비스 서버 개발자 모집</li>
-								<li class="date">2020년 7월 31일 까지 | 판교</li>
-								<li class="tag">#Server</li>
-							</ul>
-						</td>
-						<td class="date" width="20%">블루칩</td>
-						<td class="date" width="20%">정규직</td>
-					</tr>
-				</table>
+				<table id="jobList" style="width: 100%"></table>
 	 		</div>
 		</div>
 		<hr/>
+		
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<div class="col-*-*">
+				<input class="addBtn" id="addBtn" type="button" value="추가"/>
+			</div>
+		</sec:authorize>
 	</div>
 </div>
 </body>

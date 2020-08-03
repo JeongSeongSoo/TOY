@@ -1,0 +1,75 @@
+.writeDiv table {
+	margin-top: 50px;
+}
+
+.writeDiv table tr td {
+	padding-bottom: 10px;
+}
+
+.writeBox {
+	text-align: center; 
+	width: 98%; 
+	margin: 0 auto;	
+}
+
+.writeDiv {
+	text-align: center; 
+	width: 90%; 
+	margin: 0 auto;	
+}
+
+.input {
+	float: left;
+}
+
+.input input {
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.input textarea {
+	width: 100%;
+	font-size: 16px;
+	padding: 15px;
+}
+
+.input select {
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.writeBox .header span {
+	font-size: 30px;
+}
+
+.writeBox .header .step {
+	color: #ff5151;
+}
+
+.addBtn {
+	width: 180px;
+	height: 60px;
+	background-color: #ff8040;
+	color: white;
+	border-width: 0;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 30px;
+}
+
+@media ( max-width: 991px ) {
+	.writeHeader {
+		margin-left: 10px;
+	}
+}
+
+@media ( max-width: 767px ) {
+
+}

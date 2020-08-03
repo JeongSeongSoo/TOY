@@ -9,5 +9,9 @@ public interface UserMapper {
 	public UserVO loadUserByEmail(String email);
 
 	public int addUser(UserVO param);
+
+	public void addAuthorities(UserVO param);
+
+	public String loadAuthorities(String uid);
 	
 }
