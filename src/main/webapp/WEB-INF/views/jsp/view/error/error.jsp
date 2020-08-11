@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/resources/css/error.css" />
+<link rel="stylesheet" href="/resources/css/error/error.css" />
 </head>
 <body>
 <div class="container">

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/resources/css/login.css" />
+<link rel="stylesheet" href="/resources/css/login/login.css" />
 </head>
 <body>
 <div class="container">

@@ -1,2 +1,0 @@
-.wrap { position:relative; /*감싸는 레이어에 포지션 속성을 잡아주는 게 필수!(relative, absolute, fixed 중 택1*/ text-align:center; line-height:100px; margin:0 auto; font-size:12px; }
-.over { position:absolute; top:46%; left:49%;/*위에 올라가는 레이어의 포지션은 top, bottom 둘 중 하나, left, right 둘 중 하나의 속성을 선택하여 잡아준다.*/ width:10px; height:10px; text-align:center; transform:translate(-50%,-50%);}

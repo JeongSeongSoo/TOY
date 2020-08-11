@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/resources/css/join.css" />
-<script src="/resources/js/join.js"></script>
+<link rel="stylesheet" href="/resources/css/login/join.css" />
+<script src="/resources/js/login/join.js"></script>
 </head>
 <body>
 <div class="container">
