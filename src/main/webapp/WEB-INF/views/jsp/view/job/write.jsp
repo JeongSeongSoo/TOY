@@ -15,7 +15,7 @@
 		<h5>HOME > 채용</h5>
 		</div>    	
 	</div>
-	<form action="/job/add" method="post">
+	<form action="/job/add" id="addForm" method="post">
 	<div class="row writeBox">
 		<div class="col-*-* header">
 			<span class="step">STEP.</span><span> 채용</span>
@@ -30,13 +30,14 @@
 				<tr>
 					<td colspan="3">
 						<div class="input" style="width: 100%;">
-							<input type="text" name="title" placeholder="공고명" />		
+							<input type="text" name="title" placeholder="공고명" check title="공고명" />		
 						</div>
 						<div class="input" style="width: 30%;">
-							<input type="text" name="company" placeholder="회사명" />				
+							<input type="text" name="company" placeholder="회사명" check title="회사명" />				
 						</div>
 						<div class="input" style="width: 15%;">
-							<select name="employStatus">
+							<select name="employStatus" check title="고용형태" >
+								<option value="">고용형태</option>
 								<option value="0">기타</option>
 								<option value="1">정규직</option>
 								<option value="2">계약직</option>
@@ -45,14 +46,15 @@
 							</select>				
 						</div>
 						<div class="input" style="width: 15%;">
-							<input type="text" name="closeDt" placeholder="마감일" />				
+							<!-- <input type="text" name="closeDt" placeholder="마감일" check title="마감일" /> -->
+							<input type="text" name="closeDt" id="datepicker" class="datepicker" check title="마감일" />				
 						</div>
 						<div class="input" style="width: 25%;">
-							<input type="text" name="location" placeholder="지역" />				
+							<input type="text" name="location" placeholder="지역" check title="지역" />				
 						</div>
 						<div class="input" style="width: 15%;">
-							<select name="volunteer">
-								<option value="0">인원</option>
+							<select name="volunteer" check title="모집 인원" >
+								<option value="">인원</option>
 								<option value="1">1명</option>
 								<option value="2">2명</option>
 								<option value="3">3명</option>
@@ -74,7 +76,7 @@
 				<tr>
 					<td>
 						<div class="input" style="width: 100%;">
-							<textarea id="groupContent" name="groupContent"></textarea>
+							<textarea id="groupContent" name="groupContent" check title="조직소개" ></textarea>
 						</div>
 					</td>
 				</tr>
@@ -90,7 +92,7 @@
 				<tr>
 					<td>
 						<div class="input" style="width: 100%;">
-							<textarea id="businessContent" name="businessContent"></textarea>				
+							<textarea id="businessContent" name="businessContent" check title="업무내용" ></textarea>				
 						</div>
 					</td>
 				</tr>
@@ -106,7 +108,7 @@
 				<tr>
 					<td>
 						<div class="input" style="width: 100%;">
-							<textarea id="supportContent" name="supportContent"></textarea>				
+							<textarea id="supportContent" name="supportContent" check title="지원자격" ></textarea>				
 						</div>
 					</td>
 				</tr>
@@ -122,7 +124,7 @@
 				<tr>
 					<td>
 						<div class="input" style="width: 100%;">
-							<textarea id="mustContent" name="mustContent"></textarea>
+							<textarea id="mustContent" name="mustContent" check title="필독사항" ></textarea>
 						</div>
 					</td>
 				</tr>
@@ -138,7 +140,7 @@
 				<tr>
 					<td>
 						<div class="input" style="width: 100%;">
-							<textarea id="workContent" name="workContent"></textarea>		
+							<textarea id="workContent" name="workContent" check title="근로제도" ></textarea>		
 						</div>
 					</td>
 				</tr>
@@ -156,7 +158,7 @@
 		<hr/>
 		
 		<div class="col-*-*">
-			<input class="addBtn" type="submit" value="작성완료"/>
+			<input class="addBtn" id="addBtn" type="button" onclick="add();" value="작성완료"/>
 		</div>
 	</div>
 	</form>			

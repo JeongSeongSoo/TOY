@@ -12,4 +12,10 @@ public interface JobMapper {
 
 	List<JobVO> loadJob();
 
+	JobVO loadJobDetailByJid(String jid);
+
+	void removeJob(JobVO param);
+
+	void removeJobDetail(JobVO param);
+	
 }

@@ -4,18 +4,23 @@ $(document).ready(function() {
 	});
 	
 	$.ajax({
-		url: "/job/job/load",
+		url: "/job/load",
 		type: "get",
 		dataType: "JSON",
 		data: null,
 		success: function (data) {
 			var html = "";
 			var job = "";
+
+			if (data == null) {
+				return;
+			}
 			
 			for (var i = 0; i < data.length; i++) {
 				job = data[i];
 				
-				html += "<tr>";
+				html += "<tr onclick=location.href='/job/" + job.jid + "/load'>";
+				//html += "<tr onclick=alert('test');>";
 				html += "<td width='60%' style='text-align: left;'>";
 				html += "<ul>";
 				html += "<li class='title'>" + job.title + "</li>";

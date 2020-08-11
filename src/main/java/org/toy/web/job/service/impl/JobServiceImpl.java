@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.toy.common.AuthorityUtil;
 import org.toy.web.job.mapper.JobMapper;
 import org.toy.web.job.model.JobVO;
@@ -28,6 +30,47 @@ public class JobServiceImpl implements JobService {
 	@Override
 	public List<JobVO> loadJob() {
 		return jobMapper.loadJob();
+	}
+
+	@Override
+	public JobVO loadJobDetailByJid(String jid) {
+		JobVO vo = jobMapper.loadJobDetailByJid(jid);
+		
+		if (vo == null) {
+			throw new BadCredentialsException("Login Error !!");
+		}
+		
+		employStatus(vo);
+		
+		return vo;
+	}
+	
+	private void employStatus(JobVO vo) {
+		String result = "기타";
+
+		switch (vo.getEmployStatus()) {
+			case "1":
+				result = "정규직";
+				break;
+			case "2":
+				result = "계약직";
+				break;
+			case "3":
+				result = "파견직";
+				break;
+			case "4":
+				result = "인턴";
+				break;
+		}
+		
+		vo.setEmployStatus(result);
+	}
+
+	@Transactional
+	@Override
+	public void remove(JobVO param) {
+		jobMapper.removeJob(param);
+		jobMapper.removeJobDetail(param);
 	}
 
 }

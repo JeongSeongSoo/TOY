@@ -3,14 +3,35 @@
 <mapper namespace="org.toy.web.job.mapper.JobMapper">
 
 	<select id="loadJob" resultType="org.toy.web.job.model.JobVO">
-		SELECT TITLE,
-			   CLOSE_DT,
+		SELECT JID,
+		       TITLE,
+			   CONCAT(LEFT(CLOSE_DT, 4), '-', MID(CLOSE_DT, 5, 2), '-', RIGHT(CLOSE_DT, 2)) CLOSE_DT,
 			   LOCATION,
 			   COMPANY,
 			   EMPLOY_STATUS,
 			   CREATOR,
 			   CREATE_DT
 		  FROM TBL_JOB
+	</select>
+	
+	<select id="loadJobDetailByJid" resultType="org.toy.web.job.model.JobVO">
+		SELECT A.JID,
+			   A.TITLE,
+			   CONCAT(LEFT(A.CLOSE_DT, 4), '-', MID(A.CLOSE_DT, 5, 2), '-', RIGHT(A.CLOSE_DT, 2)) CLOSE_DT,
+		       A.LOCATION,
+		       A.COMPANY,
+		       A.EMPLOY_STATUS,
+		       A.CREATOR,
+		       A.CREATE_DT,
+		       B.VOLUNTEER,
+		       B.GROUP_CONTENT,
+		       B.BUSINESS_CONTENT,
+		       B.SUPPORT_CONTENT,
+		       B.MUST_CONTENT,
+		       B.WORK_CONTENT
+		  FROM TBL_JOB A
+		  JOIN TBL_JOB_DETAIL B ON A.JID = B.JID
+		 WHERE A.JID = #{jid}
 	</select>
 
 	<insert id="addJob">
@@ -24,6 +45,16 @@
 		VALUES 
 		(#{jid}, #{volunteer}, #{groupContent}, #{businessContent}, #{supportContent}, #{mustContent}, #{workContent})
 	</insert>
+	
+	<delete id="removeJob">
+		DELETE FROM TBL_JOB
+		 WHERE JID = #{jid}
+	</delete>
+	
+	<delete id="removeJobDetail">
+		DELETE FROM TBL_JOB_DETAIL
+		 WHERE JID = #{jid}
+	</delete>
 	
 </mapper>
 

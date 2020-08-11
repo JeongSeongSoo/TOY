@@ -10,4 +10,8 @@ public interface JobService {
 
 	List<JobVO> loadJob();
 
+	JobVO loadJobDetailByJid(String jid);
+
+	void remove(JobVO param);
+
 }
