@@ -26,7 +26,7 @@ public class JobController {
 	
 	@GetMapping("/jobs")
 	public String job() {
-		return "job.job";
+		return "job.jobs";
 	}
 	
 	@GetMapping("/write")
@@ -41,13 +41,17 @@ public class JobController {
 		return (list.size() > 0) ? ResponseEntity.ok(list) : ResponseEntity.noContent().build();
 	}
 	
-	@GetMapping("/{jid}/load")
-	public String loadJobDetailByJid(@PathVariable String jid, Model model) {
+	@GetMapping("/{jid}/{status}/load")
+	public String loadJobDetailByJid(@PathVariable String jid, @PathVariable String status, Model model) {
 		JobVO vo = jobService.loadJobDetailByJid(jid);
 		
 		model.addAttribute("vo", vo);
 		
-		return "job.detail";
+		if (status.equals("detail")) {
+			return "job.detail";
+		} else {
+			return "job.modify";
+		}
 	}
 	
 	@PostMapping("/add")

@@ -99,7 +99,7 @@
 		
 		<div class="col-*-*">
 			<input class="btn" id="empty" type="submit" value="지원"/>
-			<input class="btn" id="modifyBtn" onclick="modify();" type="button" value="수정"/>
+			<input class="btn" id="modifyBtn" onclick="del();" type="button" value="수정"/>
 			<input class="btn" id="deleteBtn" onclick="del();" type="button" value="삭제"/>
 		</div>
 	</div>

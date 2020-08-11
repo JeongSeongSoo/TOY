@@ -4,7 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="/resources/css/job/job.css" />
-<script src="/resources/js/job/job.js"></script>
+<script src="/resources/js/job/jobs.js"></script>
 </head>
 <body>
 <div class="container">

@@ -19,8 +19,7 @@ $(document).ready(function() {
 			for (var i = 0; i < data.length; i++) {
 				job = data[i];
 				
-				html += "<tr onclick=location.href='/job/" + job.jid + "/load'>";
-				//html += "<tr onclick=alert('test');>";
+				html += "<tr onclick=location.href='/job/" + job.jid + "/detail/load'>";
 				html += "<td width='60%' style='text-align: left;'>";
 				html += "<ul>";
 				html += "<li class='title'>" + job.title + "</li>";

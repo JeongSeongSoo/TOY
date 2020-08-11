@@ -16,6 +16,8 @@ var del = function() {
 			alert("code = "+ request.status + " error = " + error); // 실패 시 처리
 		}
 	});
-	
-	
-}
+};
+
+var modify = function() {
+	location.href = ['', 'job', $("#jid").val(), 'modify', 'load'].join('/').replace(/\/\//g, '/');
+};
