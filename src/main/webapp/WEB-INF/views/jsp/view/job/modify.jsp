@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/resources/css/job/write.css" />
+<link rel="stylesheet" href="/resources/css/job/modify.css" />
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 <script src="/resources/js/job/modify.js"></script>
@@ -16,7 +16,8 @@
 		<h5>HOME > 채용</h5>
 		</div>    	
 	</div>
-	<form action="/job/add" id="addForm" method="post">
+	<form action="/job/modify" id="modifyForm" method="post">
+	<input type="hidden" name="jid" value="${vo.jid}" />
 	<div class="row writeBox">
 		<div class="col-*-* header">
 			<span class="step">STEP.</span><span> 수정</span>
@@ -157,7 +158,7 @@
 		<hr/>
 		
 		<div class="col-*-*">
-			<input class="addBtn" id="addBtn" type="button" onclick="add();" value="작성완료"/>
+			<input class="modifyBtn" id="modifyBtn" type="button" onclick="modify();" value="수정"/>
 		</div>
 	</div>
 	</form>			

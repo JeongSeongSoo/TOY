@@ -56,5 +56,28 @@
 		 WHERE JID = #{jid}
 	</delete>
 	
+	<update id="modifyJob">
+		UPDATE TBL_JOB
+		   SET TITLE = #{title},
+		       CLOSE_DT = #{closeDt},
+		       LOCATION = #{location},
+		       company = #{company},
+		       EMPLOY_STATUS = #{employStatus},
+		       UPDATOR = #{updator},
+		       UPDATE_DT = DATE_FORMAT(NOW(),'%Y%m%d%H%i%S')
+		 WHERE JID = #{jid} 
+	</update>
+	
+	<update id="modifyJobDetail">
+		UPDATE TBL_JOB_DETAIL
+		   SET VOLUNTEER = #{volunteer},
+		       GROUP_CONTENT = #{groupContent},
+		       BUSINESS_CONTENT = #{businessContent},
+		       SUPPORT_CONTENT = #{supportContent},
+		       MUST_CONTENT = #{mustContent},
+		       WORK_CONTENT = #{workContent}
+		 WHERE JID = #{jid}
+	</update>
+	
 </mapper>
 

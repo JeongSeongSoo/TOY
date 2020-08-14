@@ -18,6 +18,27 @@ public class JobServiceImpl implements JobService {
 	@Autowired
 	private JobMapper jobMapper;
 	
+	private void employStatus(JobVO vo) {
+		String result = "기타";
+
+		switch (vo.getEmployStatus()) {
+			case "1":
+				result = "정규직";
+				break;
+			case "2":
+				result = "계약직";
+				break;
+			case "3":
+				result = "파견직";
+				break;
+			case "4":
+				result = "인턴";
+				break;
+		}
+		
+		vo.setEmployStatus(result);
+	}
+	
 	@Override
 	public void add(JobVO param) {
 		param.setJid(RandomStringUtils.randomAlphanumeric(20));
@@ -45,32 +66,19 @@ public class JobServiceImpl implements JobService {
 		return vo;
 	}
 	
-	private void employStatus(JobVO vo) {
-		String result = "기타";
-
-		switch (vo.getEmployStatus()) {
-			case "1":
-				result = "정규직";
-				break;
-			case "2":
-				result = "계약직";
-				break;
-			case "3":
-				result = "파견직";
-				break;
-			case "4":
-				result = "인턴";
-				break;
-		}
-		
-		vo.setEmployStatus(result);
-	}
-
 	@Transactional
 	@Override
 	public void remove(JobVO param) {
 		jobMapper.removeJob(param);
 		jobMapper.removeJobDetail(param);
+	}
+
+	@Override
+	public void modify(JobVO param) {
+		param.setUpdateDt(AuthorityUtil.getUid());
+		
+		jobMapper.modifyJob(param);
+		jobMapper.modifyJobDetail(param);
 	}
 
 }

@@ -14,6 +14,8 @@ public class JobVO {
 	private String employStatus;
 	private String creator;
 	private String createDt;
+	private String updator;
+	private String updateDt;
 	
 	private long volunteer;
 	private String groupContent;

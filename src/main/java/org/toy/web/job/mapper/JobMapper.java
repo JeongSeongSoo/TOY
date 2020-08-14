@@ -17,5 +17,9 @@ public interface JobMapper {
 	void removeJob(JobVO param);
 
 	void removeJobDetail(JobVO param);
+
+	void modifyJob(JobVO param);
+
+	void modifyJobDetail(JobVO param);
 	
 }

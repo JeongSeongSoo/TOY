@@ -14,14 +14,14 @@ $(document).ready(function() {
 	});
 });
 
-var add = function() {
-	var $form = $("#addForm");
+var modify = function() {
+	var $form = $("#modifyForm");
 
 	if (isEmpty($form)) {
 		return;
 	}
 	
-	var $closeDt = $("#addForm input[name='closeDt']");
+	var $closeDt = $("#modifyForm input[name='closeDt']");
 	
 	$closeDt.val(FormatUtil.toNumber($closeDt.val()));
 	

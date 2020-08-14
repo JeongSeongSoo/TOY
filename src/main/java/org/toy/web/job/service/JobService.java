@@ -14,4 +14,6 @@ public interface JobService {
 
 	void remove(JobVO param);
 
+	void modify(JobVO param);
+
 }
