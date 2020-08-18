@@ -3,8 +3,6 @@
 <html>
 <head>
 <link rel="stylesheet" href="/resources/css/job/write.css" />
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 <script src="/resources/js/job/write.js"></script>
 </head>
 <body>
@@ -46,7 +44,6 @@
 							</select>				
 						</div>
 						<div class="input" style="width: 15%;">
-							<!-- <input type="text" name="closeDt" placeholder="마감일" check title="마감일" /> -->
 							<input type="text" name="closeDt" id="datepicker" class="datepicker" check title="마감일" />				
 						</div>
 						<div class="input" style="width: 25%;">

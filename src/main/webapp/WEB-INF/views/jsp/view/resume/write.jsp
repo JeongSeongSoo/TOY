@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="/resources/css/resume/write.css" />
+<script src="/resources/js/resume/write.js"></script>
 </head>
 <body>
 <div class="container">
 	<div class="row writeHeader">
 		<div class="col-*-*">
-		<h2>지원서</h2>
-		<h5>HOME > 지원서</h5>
-		</div>    	
+			<h2>지원서</h2>
+			<h5>HOME > 지원서</h5>
+		</div>   	
 	</div>
 	<div class="row writeBox">
 		<div class="col-*-* header">
@@ -29,36 +31,39 @@
 					<td style="width: 10%;">경력 없음</td>
 				</tr>
 				<tr>
-					<td colspan="3">
-						<div class="input" style="width: 55%;">
-							<input type="text" placeholder="회사명" />		
+					<td colspan="3" id="personal">
+						<div class="input" style="width: 51%;">
+							<input type="text" name="company" placeholder="회사명" check title="회사명" />		
 						</div>
-						<div class="input" style="width: 11%;">
-							<input type="text" placeholder="입사일" />				
+						<div class="input" style="width: 13%;">
+							<input type="text" name="inDt" id="datepicker" class="datepicker" placeholder="입사일" check title="입사일" />				
 						</div>
-						<div class="input" style="width: 11%;">
-							<input type="text" placeholder="퇴사일" />				
+						<div class="input" style="width: 13%;">
+							<input type="text" name="outDt" id="datepicker" class="datepicker" placeholder="퇴사일" check title="퇴사일" />				
 						</div>
 						<div class="input" style="width: 16%;">
-							<select>
-								<option>기타</option>
-								<option>정규직</option>
-								<option>계약직</option>
-								<option>파견직</option>
-								<option>인턴</option>
+							<select name="employStatus" check title="고용형태" >
+								<option value="">고용형태</option>
+								<option value="0">기타</option>
+								<option value="1">정규직</option>
+								<option value="2">계약직</option>
+								<option value="3">파견직</option>
+								<option value="4">인턴</option>
 							</select>				
 						</div>
 						<div class="input" style="width: 7%;">
-							<input type="button" value="저장" />				
+							<input type="button" value="저장" onclick="addPersonal();" />				
 						</div>
 						<div class="input" style="width: 35%;">
-							<input type="text" placeholder="직급" />				
+							<input type="text" name="classStatus" placeholder="직급" check title="직급" />				
 						</div>
 						<div class="input" style="width: 65%;">
-							<input type="text" placeholder="담당업무" />				
+							<input type="text" name="workContent" placeholder="담당업무" check title="담당업무" />				
 						</div>
 					</td>
 				</tr>
+			</table>
+			<table id="loadPersonal" style="width: 100%; text-align: left; font-size: 20px; margin-top: 5px;">
 			</table>
 			<!-- 프로젝트 수행이력 * -->
 			<table style="width: 100%; text-align: left; font-size: 20px;">

@@ -7,7 +7,7 @@ $(document).ready(function() {
         $("#navigation-list").slideToggle(300);
     });
     
-    $("#datepicker").datepicker({
+    $(".datepicker").datepicker({
     	dateFormat: 'yy-mm-dd',
     	prevText: '이전 달',
     	nextText: '다음 달',
@@ -20,7 +20,7 @@ $(document).ready(function() {
     	yearSuffix: '년'
     });
     
-    $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    $('.datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
 });
 
 function trim(val) {

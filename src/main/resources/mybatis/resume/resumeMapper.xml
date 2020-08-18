@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.toy.web.resume.mapper.ResumeMapper">
+
+	<select id="loadPersonalByCreator" resultType="org.toy.web.resume.model.PersonalHistoryVO">
+		SELECT HID,
+			   COMPANY,
+		       IN_DT,
+		       OUT_DT,
+		       EMPLOY_STATUS,
+		       CLASS_STATUS,
+		       WORK_CONTENT,
+		       CREATOR,
+		       CREATE_DT
+		  FROM TBL_HISTORY_PERSONAL
+		 WHERE CREATOR = #{creator}
+		 ORDER BY CREATE_DT
+	</select>
+	 
+	<insert id="addPersonal">
+		INSERT INTO TBL_HISTORY_PERSONAL
+		VALUES 
+		(#{hid}, #{company}, #{inDt}, #{outDt}, #{employStatus}, #{classStatus}, #{workContent}, #{creator}, DATE_FORMAT(NOW(),'%Y%m%d%H%i%S'))
+	</insert>
+	
+	<delete id="removePersonalByHid">
+		DELETE FROM TBL_HISTORY_PERSONAL
+		 WHERE HID = #{hid}
+	</delete>
+	
+</mapper>
+
